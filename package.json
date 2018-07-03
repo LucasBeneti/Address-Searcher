@@ -1,0 +1,21 @@
+{
+  "name": "pksearcher",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "blocktrail-sdk": "^3.7.5",
+    "body-parser": "^1.18.2",
+    "bootstrap": "^4.1.1",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "jquery": "^3.3.1",
+    "request": "^2.85.0"
+  }
+}

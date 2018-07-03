@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include header %>
+    <title>Blockchain Searcher | Home</title>
+</head>
+<body>
+    <div class="container" style="margin:0 auto; border: solid red; border-radius: 15px; padding: 5px; background: peachpuff ">
+        <h1 style="text-align: center;">Ola, bem vindo ao Blockchain Searcher!</h1>
+        <h2 style="text-align: center;">Aqui você consegue encontrar um buscador de Blockchains para diversas cryptos.</h3>
+        
+        <p style="text-align: center;">
+                No presente site você consegue encontrar diversas informações de endereços de algumas cryptomoedas e ainda
+                checar por endereço, os stats da publickey.
+        </p>
+        <fieldset>
+            <form action="/" method="post">
+                Pesquise a Public Key aqui: <input name="publicKey" type="text" placeholder="Digite algo..." required>
+                <input type="submit" value="Search">
+                <input name="latestBlock" type="button" id="click" value="Get Latest Info">
+            </form>
+            
+        </fieldset>
+
+        <% if(this.balance !== null) { %>
+            <p>Quantia em BTC do endereço: <%= balance %> BTC</p>
+        <% } %>
+    </div>
+</body>
+</html>
