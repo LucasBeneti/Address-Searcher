@@ -10,23 +10,24 @@
     <title>Blockchain Searcher | Bitcoin</title>
 </head>
 <body>
-    <h1>Here you'll find information of the Bitcoin blockchain</h1>
+    <div class="container" style="margin:0 auto; border: solid red; border-radius: 15px; padding: 5px; background: peachpuff">
+        <h1>Here you'll find information of the Bitcoin blockchain</h1>
 
-    <fieldset>
-        <form action="/bitcoin" method="post">
-            <input name="publicKey" type="text" placeholder="Digite algo..." required>
-            <input type="submit" value="Search">
-            <input name="latestBlock" type="button" id="click" value="Get Latest Info">
-            
-        </form>
-    </fieldset>
-
-    <% if(this.balance !== null) { %>
-        <p>Quantia contida no endereço <span></span><%= balance %> BTC</p>
-    <% } %>
-    <% if(dataHeight !== null) { %>
-        <p><%= dataHeight %> blocks</p>
-    <% } %>
+        <fieldset>
+            <form action="/bitcoin" method="post">
+                <input name="publicKey" type="text" placeholder="Digite algo..." required>
+                <input type="submit" value="Search">
+                <input name="latestBlock" type="button" id="click" value="Get Latest Info">
+                
+            </form>
+        </fieldset>
     
+        <% if(this.balance !== null) { %>
+            <p>Quantia contida no endereço <span></span><%= balance %> BTC</p>
+        <% } %>
+        <% if(dataHeight !== null) { %>
+            <p><%= dataHeight %> blocks</p>
+        <% } %>
+    </div>    
 </body>
 </html>

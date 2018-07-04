@@ -5,7 +5,7 @@
     <title>Blockchain Searcher | Home</title>
 </head>
 <body>
-    <div class="container" style="margin:0 auto; border: solid red; border-radius: 15px; padding: 5px; background: peachpuff ">
+    <div class="container" style="margin:0 auto; border: solid red; border-radius: 15px; padding: 5px; background: peachpuff">
         <h1 style="text-align: center;">Ola, bem vindo ao Blockchain Searcher!</h1>
         <h2 style="text-align: center;">Aqui você consegue encontrar um buscador de Blockchains para diversas cryptos.</h3>
         
@@ -16,15 +16,15 @@
         <fieldset>
             <form action="/" method="post">
                 Pesquise a Public Key aqui: <input name="publicKey" type="text" placeholder="Digite algo..." required>
-                <input type="submit" value="Search">
-                <input name="latestBlock" type="button" id="click" value="Get Latest Info">
+                <input type="submit" value="Search" class="btn">
             </form>
-            
+            <% if(this.balance !== null) { %>
+                <p>Quantia em BTC do endereço: <%= balance %> BTC</p>
+            <% } %>
+            <form action="/" method="post">
+                <input name="latestBlock" type="submit" id="click" value="Get Latest Info" class="btn">
+            </form>
         </fieldset>
-
-        <% if(this.balance !== null) { %>
-            <p>Quantia em BTC do endereço: <%= balance %> BTC</p>
-        <% } %>
     </div>
 </body>
 </html>

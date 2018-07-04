@@ -37,37 +37,37 @@ app.get("/dogecoin", function(req,res) {
     res.render("dogecoin");
 })
 
-// app.post("/", function(req,res){ // se não estiver mostrando nada, verificar add testado
+app.post("/", function(req,res){ // se não estiver mostrando nada, verificar add testado
 
-//     let teste = req.body.publicKey;
-//     let dataHeight = null;
-//     let balance = null;
-
-//     console.log("entrou dentro desse if");
+    let teste = req.body.publicKey;
+    let dataHeight = null;
+    let balance = null;
     
-//     getDatafromBC(function(data) {
-//         dataHeight = data.height;
-//         res.render("index", {
-//             dataHeight: dataHeight,
-//             balance:balance,
-//         });
-//         console.log(balance);
-//         console.log(dataHeight);
-//         });
+    getDatafromBC(function(data) {
+        dataHeight = data.height;
+        res.render("index", {
+            dataHeight: dataHeight,
+            balance:balance,
+        });
+        console.log(balance);
+        console.log(dataHeight);
+        });
 
-//     getDataFromAddress(function(data){
-//         balance = (data.total_received*0.00000001);
-//         let pqKey = data.address;
-//         res.render("index", {
-//             balance:balance,
-//             dataHeight:dataHeight,
-//         });
-//         console.log(balance);
-//         console.log(dataHeight);
-//     }, teste);
+    getDataFromAddress(function(data){
+        balance = (data.total_received*0.00000001);
+        let pqKey = data.address;
+        res.render("index", {
+            balance:balance,
+            dataHeight:dataHeight,
+        });
+        console.log(balance);
+        console.log(dataHeight);
+    }, teste); //variavel teste usada pra pegar a pubkey inserida
 
-//     console.log(teste);  
-// });
+    console.log(teste);  
+});
+
+
 
 app.post("/bitcoin", function(req,res){ // se não estiver mostrando nada, verificar add testado
 
@@ -106,7 +106,7 @@ app.listen(8080, function() {
     console.log("Running on PORT 8080...");
 });
 
-function getDatafromBC(returnData) { // function to get the data from the api
+function getDatafromBC(returnData) { // usar essa funcao pra pegar o latest bloco, testar no botao da home mesmo
     //let bla = {};
     request({
       url: "https://api.blockcypher.com/v1/btc/main",
