@@ -1,15 +1,35 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <% include header %>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <!-- <script src="main.js"></script> -->
-    <title>Blockchain Searcher | Dogecoin</title>
-</head>
-<body>
-    <h1>Here you'll find information of the Doge Coin blockchain</h1>
-</body>
+    <head>
+        <% include header %>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+        <!-- <script src="main.js"></script> -->
+        <title>Blockchain Searcher | Dogecoin</title>
+    </head>
+    <body>
+        <div class="container" style="margin:0 auto; border: solid red; border-radius: 5px; padding: 5px; background: peachpuff">
+            <h1>Here you'll find information of Dogecoin wallets</h1>
+
+            <fieldset>
+                <form action="/dogecoin" method="post">
+                    <input name="publicKey" type="text" placeholder="Digite algo..." required>
+                    <input type="submit" value="Search"><hr>
+                </form>
+                  
+                <h3>Informações pertinentes em relação à carteira pesquisada</h3>
+                <% if(final_balance) { %>
+                    <p>Address: <%= address %></p>
+                    <p>Balança Final: <%= final_balance %> DOGE</p>
+                    <p>Total Recebido: <%= total_received%> DOGE</p>
+                    <p>Total Enviado: <%= total_sent%> DOGE</p>
+                    <p>Número final de transações: <%= final_n_tx %></p>
+                <% } else { %>
+                    <p>Informações pertinentes à carteira especificada...</p>
+                <% } %>
+            </fieldset>
+        </div>    
+    </body>
 </html>

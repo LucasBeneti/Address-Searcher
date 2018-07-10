@@ -7,14 +7,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
         <!-- <script src="main.js"></script> -->
-        <title>Blockchain Searcher | Ethereum</title>
+        <title>Blockchain Searcher | Dash</title>
     </head>
     <body>
         <div class="container" style="margin:0 auto; border: solid red; border-radius: 5px; padding: 5px; background: peachpuff">
-            <h1>Here you'll find information of the Ethereum blockchain</h1>
+            <h1>Here you'll find information of Dogecoin wallets</h1>
 
             <fieldset>
-                <form action="/ethereum" method="post">
+                <form action="/dash" method="post">
                     <input name="publicKey" type="text" placeholder="Digite algo..." required>
                     <input type="submit" value="Search"><hr>
                 </form>
@@ -22,9 +22,9 @@
                 <h3>Informações pertinentes em relação à carteira pesquisada</h3>
                 <% if(final_balance) { %>
                     <p>Address: <%= address %></p>
-                    <p>Balança Final: <%= final_balance %> Ether</p>
-                    <p>Total Recebido: <%= total_received%> Ether</p>
-                    <p>Total Enviado: <%= total_sent%> Ether</p>
+                    <p>Balança Final: <%= final_balance %> DASH</p>
+                    <p>Total Recebido: <%= total_received%> DASH</p>
+                    <p>Total Enviado: <%= total_sent%> DASH</p>
                     <p>Número final de transações: <%= final_n_tx %></p>
                 <% } else { %>
                     <p>Informações pertinentes à carteira especificada...</p>

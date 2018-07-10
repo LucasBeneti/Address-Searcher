@@ -8,24 +8,12 @@
     <body>
         <div class="container" style="margin:0 auto; border: solid red; border-radius: 15px; padding: 5px; background: peachpuff">
             <h1 style="text-align: center;">Ola, bem vindo ao Blockchain Searcher!</h1>
-            <h2 style="text-align: center;">Aqui você consegue encontrar um buscador de Blockchains para diversas cryptos.</h3>
+            <h2 style="text-align: center;">Esse foi um projeto com finalidade de me fazer aprender a mecher com algumas tecnologias que eu queria aprender...</h3>
 
                 <p style="text-align: center;">
                     No presente site você consegue encontrar diversas informações de endereços de algumas cryptomoedas e ainda checar por endereço,
                     os stats da publickey.
                 </p>
-                <fieldset>
-                    <form action="/" method="post">
-                        Pesquise a Public Key aqui:
-                        <input name="publicKey" type="text" placeholder="Digite algo..." required>
-                        <input type="submit" value="Search" class="btn">
-                    </form>
-                    <% if(address) { %>
-                        <p>Quantia em BTC do endereço: <%= address %> BTC</p>
-                    <% } else {%>
-                        <p>Informações pertinentes à carteira especificada...</p>
-                    <% } %>
-                </fieldset>
         </div>
     </body>
 </html>
