@@ -5,123 +5,164 @@ var bodyParser = require("body-parser");
 let app = express();
 
 app.set("view engine", "ejs");
-app.use(express.static('public'));
+app.use(express.static("public"));
 
-app.use(bodyParser.urlencoded({extended: true})); 
+app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get("/", function(req,res){
-    
-    let dataHeight = '';
-    let balance = 0;
+app.get("/dogecoin", function(req, res) {
+  res.render("dogecoin");
+});
+
+/////////////////////////////////////////HOME/////////////////////////////////////////////
+app.get("/", function(req, res) {
+  let dataHeight = "";
+  let balance = 0;
+  let address = null;
+  res.render("index", {
+    dataHeight: dataHeight,
+    balance: balance,
+    address: address
+  });
+});
+
+app.post("/", function(req, res) {
+  // se não estiver mostrando nada, verificar add testado
+
+  let pubKey = req.body.publicKey;
+  // let dataHeight = null;
+  let total_received = null;
+  let address = null;
+  let total_sent = null;
+  let final_balance = null;
+  let final_n_tx = null;
+
+  getDataFromBTCAddress(function(data) {
+    address = data.address;
+    total_received = data.total_received * 0.00000001;
+    final_balance = data.final_balance * 0.00000001;
+    total_sent = data.total_sent * 0.00000001;
+    final_n_tx = data.final_n_tx;
+
     res.render("index", {
-        dataHeight: dataHeight,
-        balance: balance,
+      final_balance: final_balance,
+      address: address
     });
+  }, pubKey); //variavel teste usada pra pegar a pubkey inserida
 });
 
-app.get("/bitcoin", function(req,res) {
-    
-    let balance= null;
-    let dataHeight = null;
+/////////////////////////////////////////BITCOIN//////////////////////////////////////////
+app.get("/bitcoin", function(req, res) {
+  let total_received = null;
+  let address = null;
+  let total_sent = null;
+  let final_balance = null;
+  let final_n_tx = null;
+
+  res.render("bitcoin", {
+    final_balance,
+    address,
+    total_received,
+    total_sent,
+    final_n_tx
+  });
+});
+
+app.post("/bitcoin", function(req, res) {
+  // se não estiver mostrando nada, verificar add testado
+
+  let pubKey = req.body.publicKey;
+
+  getDataFromBTCAddress(function(data) {
+    final_balance = data.final_balance * 0.00000001;
+    address = data.address;
+    total_received = data.total_received * 0.00000001;
+    total_sent = data.total_sent * 0.00000001;
+    final_n_tx = data.final_n_tx;
+
     res.render("bitcoin", {
-        dataHeight: dataHeight,
-        balance: balance,
+      final_balance,
+      address,
+      total_received,
+      total_sent,
+      final_n_tx
     });
+  }, pubKey);
+});
+///////////////////////////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////ETHEREUM//////////////////////////////////////////
+app.get("/ethereum", function(req, res) {
+  let total_received = null;
+  let address = null;
+  let total_sent = null;
+  let final_balance = null;
+  let final_n_tx = null;
+
+  res.render("ethereum", {
+    final_balance,
+    address,
+    total_received,
+    total_sent,
+    final_n_tx
+  });
 });
 
-app.get("/ethereum", function(req,res) {
-    res.render("ethereum");
+app.post("/ethereum", function(req, res) {
+  let pubKey = req.body.publicKey;
+
+  getDataFromETHAddress(function(data) {
+    final_balance = data.final_balance * 0.000000000000000001;
+    address = data.address;
+    total_received = data.total_received * 0.000000000000000001;
+    total_sent = data.total_sent * 0.000000000000000001;
+    final_n_tx = data.final_n_tx;
+
+    res.render("ethereum", {
+      final_balance,
+      address,
+      total_received,
+      total_sent,
+      final_n_tx
+    });
+  }, pubKey);
 });
 
-app.get("/dogecoin", function(req,res) {
-    res.render("dogecoin");
-})
+///////////////////////////////////////////////////////////////////////////////////////////
 
-app.post("/", function(req,res){ // se não estiver mostrando nada, verificar add testado
+/////////////////////////////////////////DOGECOIN//////////////////////////////////////////
 
-    let teste = req.body.publicKey;
-    let dataHeight = null;
-    let balance = null;
-    
-    getDatafromBC(function(data) {
-        dataHeight = data.height;
-        res.render("index", {
-            dataHeight: dataHeight,
-            balance:balance,
-        });
-        console.log(balance);
-        console.log(dataHeight);
-        });
-
-    getDataFromAddress(function(data){
-        balance = (data.total_received*0.00000001);
-        let pqKey = data.address;
-        res.render("index", {
-            balance:balance,
-            dataHeight:dataHeight,
-        });
-        console.log(balance);
-        console.log(dataHeight);
-    }, teste); //variavel teste usada pra pegar a pubkey inserida
-
-    console.log(teste);  
+app.get("/dogecoin", function(req, res) {
+  res.render("dogecoin");
 });
 
+///////////////////////////////////////////////////////////////////////////////////////////
 
-
-app.post("/bitcoin", function(req,res){ // se não estiver mostrando nada, verificar add testado
-
-    let teste = req.body.publicKey;
-
-    // let dataHeight = null;
-    // let balance = null;
-
-    // getDatafromBC(function(data) {
-    //     dataHeight = data.height;
-    //     res.render("bitcoin", {
-    //         dataHeight: dataHeight,
-    //         balance: balance,
-    //     });
-    //     console.log(dataHeight);
-    //     console.log(balance);
-    //   });
-
-    getDataFromAddress(function(data) {
-        balance = (data.total_received*0.00000001);
-        console.log("entrou na segunda função...");
-        
-        // let pqKey = data.address;
-        res.render("bitcoin", {
-            dataHeight: null,
-            balance:balance,
-        });
-        //console.log(dataHeight);
-        console.log(balance);
-        
-    }, teste);
-    console.log(teste); // retorna a pubKey utilizada
-});
+///////////////////////////////////////////DASH////////////////////////////////////////////
 
 app.listen(8080, function() {
-    console.log("Running on PORT 8080...");
+  console.log("Running on PORT 8080...");
 });
 
-function getDatafromBC(returnData) { // usar essa funcao pra pegar o latest bloco, testar no botao da home mesmo
-    //let bla = {};
-    request({
-      url: "https://api.blockcypher.com/v1/btc/main",
+function getDataFromBTCAddress(returnAddrInfo, pubKey) {
+  request(
+    {
+      url: `https://api.blockcypher.com/v1/btc/main/addrs/${pubKey}/balance`,
       json: true
-    }, function(err, res, body) {
-        returnData(body);
-    });
-    //console.log(bla);
+    },
+    function(err, res, body) {
+      returnAddrInfo(body);
+    }
+  );
 }
 
-function getDataFromAddress(returnAddInfo, pubKey) { //function to get the data from a pubkey
-    request({
-        url: `https://api.blockcypher.com/v1/btc/main/addrs/${pubKey}/balance`,
-        json: true
-    }, function(err, res, body) {
-        returnAddInfo(body);
-    });
+function getDataFromETHAddress(returnAddrInfo, pubkey) {
+  request(
+    {
+      url: `https://api.blockcypher.com/v1/eth/main/addrs/${pubkey}/balance`,
+      json: true
+    },
+    function(err, res, body) {
+      returnAddrInfo(body);
+    }
+  );
 }
