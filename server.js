@@ -5,7 +5,8 @@ var bodyParser = require("body-parser");
 let app = express();
 
 app.set("view engine", "ejs");
-app.use(express.static("public"));
+
+app.use(express.static(__dirname + '/styles'));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -14,40 +15,9 @@ app.get("/teoriaBlockchain", function(req,res) {
 });
 
 /////////////////////////////////////////HOME/////////////////////////////////////////////
-app.get("/", function(req, res) {
-  let dataHeight = "";
-  let balance = 0;
-  let address = null;
-  res.render("index", {
-    dataHeight: dataHeight,
-    balance: balance,
-    address: address
-  });
-});
-
-app.post("/", function(req, res) {
-  // se não estiver mostrando nada, verificar add testado
-
-  let pubKey = req.body.publicKey;
-  // let dataHeight = null;
-  let total_received = null;
-  let address = null;
-  let total_sent = null;
-  let final_balance = null;
-  let final_n_tx = null;
-
-  getDataFromBTCAddress(function(data) {
-    address = data.address;
-    total_received = data.total_received * 0.00000001;
-    final_balance = data.final_balance * 0.00000001;
-    total_sent = data.total_sent * 0.00000001;
-    final_n_tx = data.final_n_tx;
-
-    res.render("index", {
-      final_balance: final_balance,
-      address: address
-    });
-  }, pubKey); //variavel teste usada pra pegar a pubkey inserida
+app.get("/", function(req, res) { // only needs the get function
+  
+  res.render("index");
 });
 
 /////////////////////////////////////////BITCOIN//////////////////////////////////////////
@@ -72,7 +42,7 @@ app.post("/bitcoin", function(req, res) {
 
   let pubKey = req.body.publicKey;
 
-  getDataFromBTCAddress(function(data) {
+  getDataFromBlockchainAddress(function(data) {
     final_balance = data.final_balance * 0.00000001;
     address = data.address;
     total_received = data.total_received * 0.00000001;
@@ -86,7 +56,7 @@ app.post("/bitcoin", function(req, res) {
       total_sent,
       final_n_tx
     });
-  }, pubKey);
+  }, "btc", pubKey);
 });
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -110,7 +80,7 @@ app.get("/ethereum", function(req, res) {
 app.post("/ethereum", function(req, res) {
   let pubKey = req.body.publicKey;
 
-  getDataFromETHAddress(function(data) {
+  getDataFromBlockchainAddress(function(data) {
     final_balance = data.final_balance * 0.000000000000000001;
     address = data.address;
     total_received = data.total_received * 0.000000000000000001;
@@ -124,7 +94,7 @@ app.post("/ethereum", function(req, res) {
       total_sent,
       final_n_tx
     });
-  }, pubKey);
+  }, "eth",pubKey);
 });
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -150,7 +120,7 @@ app.get("/dogecoin", function(req, res) {
 app.post("/dogecoin", function(req, res) {
   let pubKey = req.body.publicKey;
 
-  getDataFromDOGEAddress(function(data) {
+  getDataFromBlockchainAddress(function(data) {
     final_balance = data.final_balance * 0.00000001;
     address = data.address;
     total_received = data.total_received * 0.00000001;
@@ -164,7 +134,7 @@ app.post("/dogecoin", function(req, res) {
       total_sent,
       final_n_tx
     });
-  }, pubKey);
+  }, "doge", pubKey);
 });
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -190,7 +160,7 @@ app.get("/dash", function(req, res) {
 app.post("/dash", function(req, res) {
   let pubKey = req.body.publicKey;
 
-  getDataFromDashAddress(function(data) {
+  getDataFromBlockchainAddress(function(data) {
     final_balance = data.final_balance*0.00000001;
     address = data.address;
     total_received = data.total_received*0.00000001;
@@ -204,7 +174,7 @@ app.post("/dash", function(req, res) {
       total_sent,
       final_n_tx
     });
-  }, pubKey);
+  }, "dash", pubKey);
 });
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -212,49 +182,13 @@ app.listen(8080, function() {
   console.log("Running on PORT 8080...");
 });
 
-function getDataFromBTCAddress(returnAddrInfo, pubKey) {
+function getDataFromBlockchainAddress(returnAddrInfo, chain, pubKey) { // function that requires the chain and the pubky for that chain from the user
   request(
     {
-      url: `https://api.blockcypher.com/v1/btc/main/addrs/${pubKey}/balance`,
+      url: `https://api.blockcypher.com/v1/${chain}/main/addrs/${pubKey}/balance`,
       json: true
     },
-    function(err, res, body) {
-      returnAddrInfo(body);
-    }
-  );
-}
-
-function getDataFromETHAddress(returnAddrInfo, pubkey) {
-  request(
-    {
-      url: `https://api.blockcypher.com/v1/eth/main/addrs/${pubkey}/balance`,
-      json: true
-    },
-    function(err, res, body) {
-      returnAddrInfo(body);
-    }
-  );
-}
-
-function getDataFromDOGEAddress(returnAddrInfo, pubkey) {
-  request(
-    {
-      url: `https://api.blockcypher.com/v1/doge/main/addrs/${pubkey}/balance`,
-      json: true
-    },
-    function(err, res, body) {
-      returnAddrInfo(body);
-    }
-  );
-}
-
-function getDataFromDashAddress(returnAddrInfo, pubkey) {
-  request(
-    {
-      url: `https://api.blockcypher.com/v1/dash/main/addrs/${pubkey}/balance`,
-      json: true
-    },
-    function(err, res, body) {
+    function(err, res,body){
       returnAddrInfo(body);
     }
   );
