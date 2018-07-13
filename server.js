@@ -178,7 +178,9 @@ app.post("/dash", function(req, res) {
 });
 ///////////////////////////////////////////////////////////////////////////////////////////
 
-app.listen(8080, function() {
+const PORT = process.env.PORT || 8080;
+
+app.listen(PORT, function() {
   console.log("Running on PORT 8080...");
 });
 
