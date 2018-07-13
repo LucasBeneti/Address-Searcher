@@ -12,7 +12,7 @@
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f1f1f1;
+    background-color: rgba(159, 15, 255, 1);
     min-width: 100%;
     overflow: auto;
 }
@@ -25,7 +25,8 @@
 }
 
 .dropdown-content a:hover {
-    background-color: #ddd;
+    color: white;
+    background-color: rgb(105, 2, 201);
 }
 
 .dropdown:hover .dropdown-content {
@@ -36,36 +37,49 @@
     background-color: #9a9b9a;
 }
 
+.navbar {
+    /* overflow: hidden; */
+    background-color: rgba(119, 29,127, .8);    
+}
+
+ul li {
+    position: relative;
+}
+
+.navbar-light {
+    color: azure;
+}
+
+.navbar-light:hover {
+    color: whitesmoke;
+}
+
+li a::before {
+    content: '';
+    display: block;
+    height: 5px;
+    background-color: #444;
+
+
+}
+
 
 /* Pagina Bitcoin (e potencialmente de todas as outras moedas) */
 body {
-    background: url(images/container_background.jpg) center center no-repeat fixed cover;
-    background-image: url(images/container_background.jpg);
+    background: linear-gradient(to bottom, rgba(155,0,191,0.25), rgba(155,0,191,.85)),url(images/container_background.jpg);  
     background-position: center center;
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
     background-size: cover;
-    background-color: rgba(255, 0, 0, 0.774);
+    /* z-index: 1; */
 }
 
 .content {
-    background-color: rgba(97, 0, 89, 0.7);
+    background-color: rgba(52, 0, 64, 0.85);
     color: #f1f1f1;
     margin-top: 4em;
     padding: 3em;
     text-align: justify;
     
-
 }
-
-/* .content {
-    background-color: #1D0840;
-    color: whitesmoke;
-}
-
-.qualquer {
-dd    background-image: url("container_background.jpg");
-     background-color: #3A107F; 
-    opacity: 0.5;
-} */
