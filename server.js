@@ -181,11 +181,7 @@ app.post("/dash", function(req, res) {
 const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, function() {
-<<<<<<< HEAD
   console.log("Running on PORT 8080 or on Heroku...");
-=======
-  console.log("Running on PORT 8080...");
->>>>>>> 797f8d7f72a9171efc24885f61608e8d09789d6d
 });
 
 function getDataFromBlockchainAddress(returnAddrInfo, chain, pubKey) { // function that requires the chain and the pubky for that chain from the user
