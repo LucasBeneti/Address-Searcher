@@ -107,7 +107,7 @@ li a:hover::before {
 
 /* Pagina Bitcoin (e potencialmente de todas as outras moedas) */
 body {
-    background: linear-gradient(to bottom, rgb(255, 255, 255, .2), rgba(255,255,255,.85)),url(images/container_background.jpg);  
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.85)),url(images/container_background.jpg);  
     background-position: center center;
     background-repeat: no-repeat;
     background-position: center center;
@@ -117,7 +117,7 @@ body {
 }
 
 .content {
-    background-color: rgba(255, 255, 249, 0.85);
+    background-color: rgba(236, 236, 236, 0.85);
     color: #1b1b1b;
     margin-top: 4em;
     padding: 3em;
