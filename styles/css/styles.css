@@ -1,6 +1,5 @@
 /* Styles for the Header */
 .dropbtn{
-    
     border: none;
 }
 
@@ -16,7 +15,7 @@
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: rgb(54, 54, 54, .95);
+    background-color: rgb(54, 54, 54);
     min-width: 100%;
     overflow: auto;
 }
@@ -42,10 +41,8 @@
 }
 
 .navbar {
-    /* overflow: hidden; */
     background-color: rgba(14, 14, 14, 0.705);    
 }
-
 
 ul li {
     position: relative;
@@ -56,17 +53,13 @@ ul li {
     color: whitesmoke;
 }
 
-/* .nav_right {
-    float: right;
-} */
-
 li a {
     color: white;
     text-transform: uppercase;
     font-size: 12px;
 }
 
-/* esquema pra fazer a animação do bloco em cima dos links da navbar*/
+/* esquema pra fazer a animação do bloco em cima dos links da navbar */
 li a:hover {
     color: #9a9b9a;
     text-decoration: none;  
@@ -89,7 +82,7 @@ li a::before {
 li a:hover::before {
     width: 100%;
 }
-/* até aqui em cima*/
+/* até aqui*/
 
 /*--------------------LOGO------------------*/
 .logo {
@@ -103,7 +96,9 @@ li a:hover::before {
     color: aliceblue;
 }
 
-
+h1, h2, p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
 /* Pagina Bitcoin (e potencialmente de todas as outras moedas) */
 body {
@@ -120,7 +115,68 @@ body {
     background-color: rgba(236, 236, 236, 0.85);
     color: #1b1b1b;
     margin-top: 4em;
-    padding: 3em;
-    text-align: justify;
-    
+    padding: 3em;    
 }
+
+/*----------------form e button styling------------------*/
+.ghost-input {
+    display: block;
+    width: 100%;
+    font-size: 15px;
+    border:0px;
+    outline: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background: rgb(249, 249, 249);
+    padding: 10px 15px;
+    margin: 30px 0px;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;   
+}
+.ghost-input:focus {
+    border-left:2px solid rgb(13, 236, 13);
+    background: rgb(255, 255, 255);
+}
+.ghost-button {
+    background-color: transparent;
+    border:2px solid #ddd;
+    padding:10px 30px;
+    width: 100%;
+
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;    
+    transition: all 0.2s ease-in-out;
+}
+.ghost-button:hover {
+    border:1px solid rgb(13, 236, 13);
+    background: #454545;
+    color: rgb(13, 236, 13);
+}
+
+  /*------------------- Styling das informações em display -------------------*/
+.col-centered {
+    float: none;
+    margin: 0 auto;    
+}
+  
+.addr_info{
+color: #090909;
+font-size: 16px;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Footer styling */
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: red;
+}
+  
