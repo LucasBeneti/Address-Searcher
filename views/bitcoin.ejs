@@ -6,34 +6,54 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-        <!-- <script src="main.js"></script> -->
         <title>Blockchain Searcher | Bitcoin</title>
     </head>
     <body>
         <div class="container-fluid d-flex align-items-center justify-content-center">
             <div class="content">
                 <h3>Aqui você encontra informações sobre endereços de carteiras da main net do Bitcoin</h3>
-
-                <fieldset>
-                    <form action="/bitcoin" method="post">
-                        <input name="publicKey" type="text" placeholder="Digite algo..." class="ghost-input"  required>
-                        <input type="submit" class="ghost-button" value="Search">
-                    </form>
-                    <hr>
-                    <div class="row">
-                        <div class="container">
-                            <% if(final_balance) { %>
-                                <p class="addr_info">Address: <%= address %></p>
-                                <p class="addr_info">Balança Final: <%= final_balance %> BTC</p>
-                                <p class="addr_info">Total Recebido: <%= total_received%> BTC</p>
-                                <p class="addr_info">Total Enviado: <%= total_sent%> BTC</p>
-                                <p class="addr_info">Número final de transações: <%= final_n_tx %></p>
-                            <% } else { %>
-                                <p class="addr_info">Informações pertinentes à carteira especificada aparecerão aqui caso o endereço da Blockchain especificada seja válida...</p>
-                            <% } %>
-                        </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at velit eu tellus sodales mollis eu in ipsum. Donec vestibulum maximus mollis. Sed vitae nunc ultrices, mattis arcu vel, fringilla libero. Maecenas fermentum quam dui, at elementum tellus placerat et. Fusce tempus quam ac ipsum tristique, in ultrices lectus pellentesque. Sed euismod libero nisl, vel bibendum urna blandit convallis. Suspendisse ante neque, scelerisque eu orci sed, mollis fermentum turpis. Quisque dui arcu, consectetur vitae nisl sed, bibendum sagittis felis. Praesent lacinia fringilla lacus, ac viverra risus suscipit ac. Quisque consectetur sollicitudin felis id cursus. Sed ac venenatis mauris. Cras fringilla gravida eros, in consequat augue facilisis quis. Nunc tempor sem ut massa aliquet, ut cursus ipsum placerat. Aliquam ut aliquet ante. Pellentesque ultricies at arcu consectetur dapibus. Nullam bibendum id enim a rutrum. Morbi auctor lobortis est vel imperdiet. Maecenas mattis, magna ut pulvinar mollis, eros tortor tincidunt lacus, nec hendrerit eros purus vitae massa. Cras tempus nunc a turpis porttitor scelerisque in ac nulla. Pellentesque eu diam tristique, cursus eros eu, malesuada dolor. Curabitur ut nunc eget est porta auctor. Praesent varius, diam sit amet vehicula scelerisque, risus lectus viverra ligula, ut interdum orci est tincidunt odio. Mauris vehicula metus massa, id dapibus tortor aliquet sit am</p>
+                <form action="/bitcoin" method="post">
+                    <input name="publicKey" type="text" placeholder="Forneça o endereço..." class="ghost-input"  required>
+                    <button type="submit" class="ghost-button">Buscar</button>
+                </form>
+                <hr>
+                <div class="row">
+                    <div class="container">
+                        <% if(final_balance) { %>
+                            <p class="addr_info">Address: <%= address %></p>
+                            <p class="addr_info">Balança Final: <%= final_balance %> BTC</p>
+                            <p class="addr_info">Total Recebido: <%= total_received%> BTC</p>
+                            <p class="addr_info">Total Enviado: <%= total_sent%> BTC</p>
+                            <p class="addr_info">Número final de transações: <%= final_n_tx %></p>
+                        <% } else { %>
+                            <p class="addr_info">Informações pertinentes à carteira especificada aparecerão aqui caso o endereço da Blockchain especificada seja válida...</p>
+                        <% } %>
                     </div>
-                </fieldset>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at velit eu tellus sodales mollis eu in ipsum. Donec vestibulum maximus mollis. Sed vitae nunc ultrices, mattis arcu vel, fringilla libero. Maecenas fermentum quam dui, at elementum tellus placerat et. Fusce tempus quam ac ipsum tristique, in ultrices lectus pellentesque. Sed euismod libero nisl, vel bibendum urna blandit convallis. Suspendisse ante neque, scelerisque eu orci sed, mollis fermentum turpis. Quisque dui arcu, consectetur vitae nisl sed, bibendum sagittis felis. Praesent lacinia fringilla lacus, ac viverra risus suscipit ac. Quisque consectetur sollicitudin felis id cursus. Sed ac venenatis mauris. Cras fringilla gravida eros, in consequat augue facilisis quis. Nunc tempor sem ut massa aliquet, ut cursus ipsum placerat. Aliquam ut aliquet ante.
+
+                    Pellentesque ultricies at arcu consectetur dapibus. Nullam bibendum id enim a rutrum. Morbi auctor lobortis est vel imperdiet. Maecenas mattis, magna ut pulvinar mollis, eros tortor tincidunt lacus, nec hendrerit eros purus vitae massa. Cras tempus nunc a turpis porttitor scelerisque in ac nulla. Pellentesque eu diam tristique, cursus eros eu, malesuada dolor. Curabitur ut nunc eget est porta auctor.
+                    
+                    Praesent varius, diam sit amet vehicula scelerisque, risus lectus viverra ligula, ut interdum orci est tincidunt odio. Mauris vehicula metus massa, id dapibus tortor aliquet sit amet. Quisque vehicula ut est ac ornare. Fusce ut aliquam lorem. Fusce libero leo, pretium eget velit vitae, sollicitudin interdum nunc. Cras id urna vitae augue aliquam finibus ut ac augue. Nullam vulputate odio orci.
+                    
+                    Aenean non velit enim. Pellentesque vulputate justo ac nisl aliquam facilisis. Fusce sodales rutrum lacinia. Maecenas pellentesque dolor eu nisl sollicitudin, sodales lobortis sem rutrum. Nullam rhoncus ipsum quis diam posuere vehicula. Morbi non augue non arcu mollis laoreet. Maecenas vel leo non velit sagittis elementum. Fusce diam justo, volutpat vitae sagittis volutpat, rhoncus sit amet libero.
+                    
+                    Proin lorem ipsum, interdum at enim non, eleifend congue nulla. Aliquam ipsum libero, consectetur in porta vel, iaculis ut lorem. Cras lacinia turpis nibh, in dignissim magna feugiat vitae. Nulla gravida dapibus dapibus. Cras viverra malesuada felis, ut efficitur odio convallis id. Aliquam est diam, feugiat in cursus eget, tincidunt sagittis tellus. Nullam laoreet sem et magna vestibulum, nec egestas justo posuere. Donec quis ultrices ex. In arcu nisi, mattis eget consectetur a, porta pulvinar mauris. Nulla auctor euismod eros eget tempus. Phasellus nec imperdiet lacus. Nam vitae venenatis velit, ut placerat risus. Nullam ultrices convallis faucibus.
+                    
+                    </p>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at velit eu tellus sodales mollis eu in ipsum. Donec vestibulum maximus mollis. Sed vitae nunc ultrices, mattis arcu vel, fringilla libero. Maecenas fermentum quam dui, at elementum tellus placerat et. Fusce tempus quam ac ipsum tristique, in ultrices lectus pellentesque. Sed euismod libero nisl, vel bibendum urna blandit convallis. Suspendisse ante neque, scelerisque eu orci sed, mollis fermentum turpis. Quisque dui arcu, consectetur vitae nisl sed, bibendum sagittis felis. Praesent lacinia fringilla lacus, ac viverra risus suscipit ac. Quisque consectetur sollicitudin felis id cursus. Sed ac venenatis mauris. Cras fringilla gravida eros, in consequat augue facilisis quis. Nunc tempor sem ut massa aliquet, ut cursus ipsum placerat. Aliquam ut aliquet ante.
+
+                        Pellentesque ultricies at arcu consectetur dapibus. Nullam bibendum id enim a rutrum. Morbi auctor lobortis est vel imperdiet. Maecenas mattis, magna ut pulvinar mollis, eros tortor tincidunt lacus, nec hendrerit eros purus vitae massa. Cras tempus nunc a turpis porttitor scelerisque in ac nulla. Pellentesque eu diam tristique, cursus eros eu, malesuada dolor. Curabitur ut nunc eget est porta auctor.
+                        
+                        Praesent varius, diam sit amet vehicula scelerisque, risus lectus viverra ligula, ut interdum orci est tincidunt odio. Mauris vehicula metus massa, id dapibus tortor aliquet sit amet. Quisque vehicula ut est ac ornare. Fusce ut aliquam lorem. Fusce libero leo, pretium eget velit vitae, sollicitudin interdum nunc. Cras id urna vitae augue aliquam finibus ut ac augue. Nullam vulputate odio orci.
+                        
+                        Aenean non velit enim. Pellentesque vulputate justo ac nisl aliquam facilisis. Fusce sodales rutrum lacinia. Maecenas pellentesque dolor eu nisl sollicitudin, sodales lobortis sem rutrum. Nullam rhoncus ipsum quis diam posuere vehicula. Morbi non augue non arcu mollis laoreet. Maecenas vel leo non velit sagittis elementum. Fusce diam justo, volutpat vitae sagittis volutpat, rhoncus sit amet libero.
+                        
+                        Proin lorem ipsum, interdum at enim non, eleifend congue nulla. Aliquam ipsum libero, consectetur in porta vel, iaculis ut lorem. Cras lacinia turpis nibh, in dignissim magna feugiat vitae. Nulla gravida dapibus dapibus. Cras viverra malesuada felis, ut efficitur odio convallis id. Aliquam est diam, feugiat in cursus eget, tincidunt sagittis tellus. Nullam laoreet sem et magna vestibulum, nec egestas justo posuere. Donec quis ultrices ex. In arcu nisi, mattis eget consectetur a, porta pulvinar mauris. Nulla auctor euismod eros eget tempus. Phasellus nec imperdiet lacus. Nam vitae venenatis velit, ut placerat risus. Nullam ultrices convallis faucibus.
+                            
+                    </p>
             </div>
         </div>    
         <% include footer %>
