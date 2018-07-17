@@ -41,7 +41,7 @@
 }
 
 .navbar {
-    background-color: rgba(14, 14, 14, 0.705);    
+    background-color: rgba(14, 14, 14, 0.904);    
 }
 
 ul li {
@@ -102,6 +102,10 @@ h1, h2, p{
 }
 
 /* Pagina Bitcoin (e potencialmente de todas as outras moedas) */
+html {
+    height: 100%;
+}
+
 body {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.85)),url(images/container_background.jpg);  
     background-position: center center;
@@ -110,6 +114,9 @@ body {
     background-attachment: fixed;
     background-size: cover;
     /* z-index: 1; */
+    height: 100%;
+    position: relative;
+    /* padding-bottom: 4em; */
 }
 
 .content {
@@ -117,6 +124,8 @@ body {
     color: #e8e8e8;
     margin-top: 4em;
     padding: 3em;    
+    min-height: 100%;
+    width: 80%;
 }
 
 /*----------------form e button styling------------------*/
@@ -182,19 +191,18 @@ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 /* Footer styling */
 .footer {
     position: relative;
-    bottom: 0;
-    right: 0px;
+    bottom: -4em;
     width: 100%;
     height: 4em;
     background: rgba(11, 11, 11, 0.927);
 }
 
 .footer-content {
-    font-size: 13px;
+    font-size: 11px;
+    margin-top: 15px;
     position: relative;
-    left: -120px;
+    left: 0;
     top: 25px;
-
     color: rgb(181, 181, 181)
 }
 
