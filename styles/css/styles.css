@@ -44,6 +44,15 @@
     background-color: rgba(14, 14, 14, 0.904);    
 }
 
+ul {
+    list-style-type: none;
+}
+
+.list-addr {
+    color: rgb(179, 179, 179);
+    border-bottom: 2px solid rgb(13, 236, 13);
+}
+
 ul li {
     position: relative;
     margin-right: 20px;
