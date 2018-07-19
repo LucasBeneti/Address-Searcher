@@ -10,26 +10,34 @@
         <title>Buscador de Endereços | Ethereum</title>
     </head>
     <body>
-        <div class="container" style="margin:0 auto; border: solid red; border-radius: 5px; padding: 5px; background: peachpuff">
-            <h1>Here you'll find information of the Ethereum blockchain</h1>
-
-            <fieldset>
-                <form action="/ethereum" method="post">
-                    <input name="publicKey" type="text" placeholder="Digite algo..." required>
-                    <input type="submit" value="Search"><hr>
-                </form>
-                  
-                <h3>Informações pertinentes em relação à carteira pesquisada</h3>
-                <% if(final_balance) { %>
-                    <p>Address: <%= address %></p>
-                    <p>Balança Final: <%= final_balance %> Ether</p>
-                    <p>Total Recebido: <%= total_received%> Ether</p>
-                    <p>Total Enviado: <%= total_sent%> Ether</p>
-                    <p>Número final de transações: <%= final_n_tx %></p>
-                <% } else { %>
-                    <p>Informações pertinentes à carteira especificada...</p>
-                <% } %>
-            </fieldset>
+        <div class="container-fluid d-flex align-items-center justify-content-center">
+            <div class="content">
+                <h3>Ethereum</h3>
+                    <p>Aqui você encontrará informações sobre endereços da blockchain da Ethereum. Caso não esteja de posse de um endereço (quem anda com isso na cabeça...), aqui 
+                            vão alguns dos famosos:</p>
+                    <ul>
+                        <li><strong class="list-addr justify-center">Bitfinex_1: <span class="addrs-style">0xcAfB10eE663f465f9d10588AC44eD20eD608C11e</span>.</strong> Cold wallet (carteira mantida "fora da internet") de uma das maiores exchanges (corretoras) de crypto.</li>
+                        <li><strong class="list-addr">Kraken_4: <span class="addrs-style">0x267be1C1D684F78cb4F6a176C4911b741E4Ffdc0</span>.</strong> Endereço que os oficiais americanos usaram para armazenar os Bitcoins da invetigação envolvendo o site famoso site Silk Road, da Deep Web, e seu suposto criador Ross Ulbricht.</li>
+                    </ul>
+                    <form action="/ethereum" method="post">
+                        <input name="publicKey" type="text" placeholder="Forneça o endereço..." class="search-input"  required>
+                    </form>
+                    <hr class="hr-style">
+                    <div class="row">
+                        <div class="container">
+                            <% if(final_balance!==null) { %>
+                                <p class="addr_info">Address: <%= address %></p>
+                                <p class="addr_info">Balança Final: <%= final_balance %> ETH</p>
+                                <p class="addr_info">Total Recebido: <%= total_received%> ETH</p>
+                                <p class="addr_info">Total Enviado: <%= total_sent%> ETH</p>
+                                <p class="addr_info">Número final de transações: <%= final_n_tx %></p>
+                            <% } else { %>
+                                <p class="addr_info">informações do endereço pesquisado serão mostradas logo abaixo caso o endereço da Blockchain especificada seja válida...</p>
+                            <% } %>
+                        </div>
+                    </div>
+            </div>
         </div>    
     </body>
+    <% include footer %>
 </html>

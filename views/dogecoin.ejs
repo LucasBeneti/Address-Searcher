@@ -10,26 +10,33 @@
         <title>Buscador de Endereços | Dogecoin</title>
     </head>
     <body>
-        <div class="container" style="margin:0 auto; border: solid red; border-radius: 5px; padding: 5px; background: peachpuff">
-            <h1>Here you'll find information of Dogecoin wallets</h1>
-
-            <fieldset>
+        <div class="container-fluid d-flex align-items-center justify-content-center">
+            <div class="content">
+                <h3>Dogecoin</h3>
+                <p>Aqui você encontrará informações sobre endereços da blockchain da Dogecoin, a Dogechain. Caso não esteja de posse de um endereço (quem anda com isso na cabeça...), aqui 
+                        vão alguns dos famosos:</p>
+                <ul>
+                    <li><strong class="list-addr justify-center">Exemplo: <span class="addrs-style">DHKM6NDUUv9kaHAGi1QU7MRBNKfQiAdP3F</span>.</strong> Cold wallet (carteira mantida "fora da internet") de uma das maiores exchanges (corretoras) de crypto.</li>
+                </ul>
                 <form action="/dogecoin" method="post">
-                    <input name="publicKey" type="text" placeholder="Digite algo..." required>
-                    <input type="submit" value="Search"><hr>
+                    <input name="publicKey" type="text" placeholder="Forneça o endereço..." class="search-input"  required>
                 </form>
-                  
-                <h3>Informações pertinentes em relação à carteira pesquisada</h3>
-                <% if(final_balance) { %>
-                    <p>Address: <%= address %></p>
-                    <p>Balança Final: <%= final_balance %> DOGE</p>
-                    <p>Total Recebido: <%= total_received%> DOGE</p>
-                    <p>Total Enviado: <%= total_sent%> DOGE</p>
-                    <p>Número final de transações: <%= final_n_tx %></p>
-                <% } else { %>
-                    <p>Informações pertinentes à carteira especificada...</p>
-                <% } %>
-            </fieldset>
+                <hr class="hr-style">
+                <div class="row">
+                    <div class="container">
+                        <% if(final_balance!==null) { %>
+                            <p class="addr_info">Address: <%= address %></p>
+                            <p class="addr_info">Balança Final: <%= final_balance %> DOGE</p>
+                            <p class="addr_info">Total Recebido: <%= total_received%> DOGE</p>
+                            <p class="addr_info">Total Enviado: <%= total_sent%> DOGE</p>
+                            <p class="addr_info">Número final de transações: <%= final_n_tx %></p>
+                        <% } else { %>
+                            <p class="addr_info">informações do endereço pesquisado serão mostradas logo abaixo caso o endereço da Blockchain especificada seja válida...</p>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
         </div>    
     </body>
+    <% include footer %>
 </html>
