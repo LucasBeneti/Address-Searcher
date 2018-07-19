@@ -243,6 +243,10 @@ body {
 
 }
 
+.chain-name {
+    border-bottom: 1px solid rgb(13, 236, 13);
+}
+
   /*------------------- Styling das informações em display -------------------*/
 .col-centered {
     float: none;
