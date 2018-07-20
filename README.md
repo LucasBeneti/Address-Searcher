@@ -5,14 +5,14 @@ It is my very first finished project, and the reason I did it is that I wanted t
 
 ## Getting Started
 
-To get started, you need simply to clone this repository and ## npm install ## the dependencies for this project.
+To get started, you need simply to clone this repository and ```npm install``` the dependencies for this project.
 
 ### Prerequisites
 
-The prerequisites are NodeJS (preferebly v8 and up), npm and if you prefer for convenience ## npm install nodemon ##
-
+The prerequisites are NodeJS (preferebly v8 and up) and npm (that usually comes with NodeJS). When you got the Node and npm installed, if you want to check if they're installed and you're in a mac or Linux, ope the terminal and type:
 ```
-Give examples
+node -v or node --verion
+npm -v or npm --verion
 ```
 
 ### Installing
