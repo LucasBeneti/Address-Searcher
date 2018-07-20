@@ -1,4 +1,4 @@
-/* Styles for the Header */
+/* Styles para o Header */
 .dropbtn{
     border: none;
 }
@@ -50,7 +50,7 @@ ul {
 
 .list-addr {
     text-align: justify;
-    color: rgb(17, 208, 0);
+    color: rgb(152, 152, 152);
     border-bottom: none;
     transition: all 0.1s ease-in-out;
 }
@@ -69,19 +69,28 @@ ul {
     color: rgb(255, 70, 227);
 }
 
+.teoria-subtitulo {
+    text-align: justify;
+    font-size: 20px;
+    color: rgb(152, 152, 152);
+    border-bottom: none;
+    transition: all 0.1s ease-in-out;
+}
+
+.teoria-subtitulo:hover {
+    border-bottom: 2px solid rgb(13, 236, 13);
+}   
+
 ul li {
     position: relative;
     margin-right: 20px;
-}
-
-.navbar-light:hover {
-    color: whitesmoke;
+    font-family: 'Montserrat', sans-serif, Verdana, sans-serif;
 }
 
 li a {
     color: white;
     text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif, Verdana, sans-serif;
     font-size: 12px;
 }
 
@@ -140,7 +149,6 @@ body {
     background-position: center center;
     background-attachment: fixed;
     background-size: cover;
-    /* z-index: 1; */
     height: 100%;
     position: relative;
     padding-bottom: 4em;
@@ -162,56 +170,7 @@ body {
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
-/*----------------form e button styling------------------*/
-.ghost-input {
-    display: block;
-    width: 70%;
-    font-size: 15px;
-    border: none;
-    outline: none;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    background: rgb(249, 249, 249);
-    padding: 10px 15px;
-    margin: 30px 0px;
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -ms-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-    position: relative;
-    left: 10%;
-    right: 10%;
-}
-.ghost-input:focus {
-    border-left:2px solid rgb(13, 236, 13);
-    background: rgb(255, 255, 255);
-}
-.ghost-button {
-    display: block;
-    background-color: rgb(36, 36, 36);
-    color: rgb(13, 236, 13);
-    border:none;
-    padding:10px 30px;
-    width: 50px;
-    position: relative;
-    left: 15%;
-    right: 15%;
-    height: 20px;
-
-    -webkit-transition: all 0.1s ease-in-out;
-    -moz-transition: all 0.1s ease-in-out;
-    -ms-transition: all 0.1s ease-in-out;
-    -o-transition: all 0.1s ease-in-out;    
-    transition: all 0.1s ease-in-out;
-}
-.ghost-button:hover {
-    /* border:1px solid rgb(255, 255, 255); */
-    background: rgb(13, 236, 13);
-    color: rgb(255, 255, 255);
-}
-
+/*----------------form styling------------------*/
 .search-input {
     width: 60%;
     box-sizing: border-box;
@@ -256,22 +215,21 @@ body {
 .addr_info{
 color: #fafafa;
 font-size: 16px;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-family: 'Montserrat', sans-serif, Verdana, sans-serif;
 }
 
 /* Footer styling */
-.footer {
-    display: block;
-    position: relative;
+#footer {
+    position: fixed;
     bottom: 0;
+    margin-top: auto;
     width: 100%;
     height: 4em;
     background: rgb(11, 11, 11);
 }
 
-.footer-content {
+#footer-content {
     font-size: 11px;
-    margin-top: 15px;
     position: relative;
     left: 0;
     top: 25px;
@@ -285,6 +243,7 @@ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 .blockcypher-link:hover {
     text-decoration: none;
+    border-bottom: 1px solid rgb(13, 236, 13);
     color: #9a9b9a;
 }
 

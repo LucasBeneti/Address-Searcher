@@ -1,18 +1,28 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <% include header %>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <title>Buscador de Endereços | Teoria</title>
-</head>
-<body>
-    <div class="container-fluid d-flex align-items-center justify-content-center">
-        <div class="content">
-            <h2>Aqui você vai encontrar conhecimento sobre blockchains...</h2>
+    <head>
+        <% include header %>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Buscador de Endereços | Teoria</title>
+    </head>
+    <body>
+        <div class="container-fluid d-flex align-items-center justify-content-center">
+            <div class="content">
+                <h2>Aqui são apresentados de forma breve os conceitos de Blockchain e de Endereço Público de carteiras:</h2>
+                <p>
+                    <strong class="teoria-subtitulo">Blockchain -</strong> Um tipo de registro, como uma planilha no Excell, onde são mantidas informações (que nesse exemplo serão transações) os registros das diversas transações que ocorreram na blockchain, sendo elas registradas na ordem em que ocorreram e em blocos, as partes envolvidas nas transações e ainda pode conter mais algumas informações dependendo da blockchain em que elas ocorreram (atualmente as mais utilizadas são a do Bitcoin, da Ethereum, Dash...entre outras). Tendo isso em mente, imagine ainda que diversas pessoas tem uma cópia dessa cadeia de blocos de transações, sendo esses registros atualizados constantemente e a cada 10 minutos um bloco de transações é adicionado à ela. A forma com que esses blocos são adicionados à essa cadeia pode variar de diversos métodos (Proof of Work, Proof of Stake…), sendo que o mais utilizado atualmente é por meio de mineradores, que com suas máquinas potentes resolvem difíceis problemas matemáticos (Proof of Work) cuja dificuldade deve sempre se manter num patamar de modo que a frequência de blocos adicionados seja de mais ou menos 10 minutos.
+                    A utilidade dos mineradores é que eles criam uma rede de computadores cujo processamento é de um nível absurdamente grande, por isso, se torna basicamente impossível alterar dados de blocos muito a dentro da Blockchain. E o que mantém esses mineradores motivados a continuarem a realizar esse trabalho tão custoso e complexo, é que há recompensas por minerar um bloco, no caso do Bitcoin, o primeiro minerador que resolve o problema matemático imposto, recebe alguns Bitcoins como recompensa pelo trabalho. 
+                    Sendo assim, é interessante notar que essa rede computacional de altíssimo poder computacional é o que faz com que o conceito e as Blockchains em si sejam tão seguras contra ataques que visam alterar dados (no caso do Bitcoin, alterar transações com a finalidade de realizar gasto duplo entre outras irregularidades).
+                </p>
+                <p>
+                    <strong class="teoria-subtitulo">Endereços Públicos e Privados -</strong> São endereços, como o e-mail, que usamos para mandar e receber as criptomoedas dentro de uma blockchain. Cada carteira de criptomoedas tem um endereço público e um privado, o primeiro utilizado para receber criptomedas e o segundo é usado para mandá-las. 
+                    Cada blockchain tem um tipo de endereço de carteira, no Bitcoin os endereços devem começar pelo número 1 ou 3, na blockchain da Dogecoin precisa começar com a letra D maiúscula e assim vai para cada blockchain basicamente.
+                    É importante notar que carteiras de criptomoedas possuem basicamente dois endereços (também chamados chaves), uma chave pública e uma chave privada, e sendo que tem está em posse da chave privada, está em posse de todo o conteúdo daquela carteira, pois o indivíduo tem a possibilidade de mandar as moedas da carteira para qualquer outro endereço válido, sendo que as transações gravadas na Blockchain são irreversíveis basicamente. Devido à isso que geralmente é colocada algum tipo de criptografia nas chaves privadas, de modo que elas não possam ser decodificadas sem essa senha previamente estabelecida pelo criador da carteira. Agora para a criação dessas carteiras existem diversos métodos válidos e de diferentes níveis de segurança, porém não é o intuito dessa explicação abranger esse assunto.
+                </p>
+            </div>
         </div>
-    </div>
-</body>
+    </body>
+    <% include footer %>
 </html>
