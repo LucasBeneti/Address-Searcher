@@ -1,6 +1,6 @@
 # Address-Searcher
 
-It is my very first finished project, and the reason I did it is that I wanted to learn more about basic structuring and design of a full project. It is simple, but it's nice. What the project is for is basicly self explanatory by it's name. You can search for addresses of cryptowallets in different Blockchains, such as Bitcoin, Ethereum, Dash and Dogecoin, maybe soon of Litecoin also...And there's also a section where I try to explain in my best words what is a Blockchain and it's aspects that comes with it. 
+It is my very first finished project, and the reason I did it is that I wanted to learn more about basic structuring and design of a full project. It is simple, but it's nice. What the project is for is basicly self explanatory by it's name. You can search for addresses of cryptowallets in different Blockchains, such as Bitcoin, Ethereum, Dash and Dogecoin. And there's also a section where I try to explain in my best words what is a Blockchain and it's aspects that comes with it. 
 
 
 ## Getting Started
@@ -14,44 +14,9 @@ The prerequisites are NodeJS (preferebly v8 and up) and npm (that usually comes 
 node -v or node --verion
 npm -v or npm --verion
 ```
-
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
+With **Node and npm** installed, make sure you're in the root directory of the project and just run```npm install ``` on the terminal to install all the dependencies. You can also install **nodemon** you you think it's worth it.
 
 ## Deployment
 
@@ -59,9 +24,10 @@ Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [NodeJS](https://nodejs.org/en/) - For the Backend
+* [npm](https://www.npmjs.com/) - Dependency Management
+* [EJS](http://ejs.co/) - Embbeded Javascript
+* [Blockcypher API](https://www.blockcypher.com/dev/) - API services
 
 ## Contributing
 
